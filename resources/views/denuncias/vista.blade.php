@@ -12018,14 +12018,16 @@
             <table class="text-center">
                 <tbody>                    
                     <tr>
-                        <th scope="col" style="width: 80%;" class="py-5 text-center col-sm-8">
-                            <p class="h4">FORMULARIO DE QUEJAS Y DENUNCIAS SOBRE AGIO Y ESPECULACIÓN DE PRECIOS
+                        <th scope="col" style="width: 15%;">
+                            <img src="C:\laragon\www\sedes\storage\app\public\denuncia/loggob.png" width="120" height="120" />
+                        </th>
+                        <th scope="col" style="width: 70%;" class="py-5 text-center col-sm-8">
+                            <p style="font-size: 20px;">FORMULARIO DE QUEJAS Y DENUNCIAS SOBRE AGIO Y ESPECULACIÓN DE PRECIOS
                             Y MEDICAMENTOS
                             </p>
                         </th>
-                        <th scope="col" style="width: 20%;">
-                            <img src="C:\laragon\www\sedes\storage\app\public\denuncia/loggob.png" width="70" height="70" />
-                            <img src="C:\laragon\www\sedes\storage\app\public\denuncia/logsed-200.jpg" width="70" height="70" />
+                        <th scope="col" style="width: 15%;">
+                            <img src="C:\laragon\www\sedes\storage\app\public\denuncia/logsed-200.jpg" width="110" height="110" />
                         </th>
                     </tr>
                 </tbody>
@@ -12039,24 +12041,24 @@
                     <li class="list-group-item text-justify" style="height: 175px">{{ $denuncias->observacion }}</li>
 
                     <strong><label for="Descripción" class="mt-2">Descripción del lugar</label></strong>
-                    <li class="list-group-item text-justify mt-2" style="height: 140px">{{ $denuncias->descripcion }} </li>
+                    <li class="list-group-item text-justify mt-2" style="height: 100px">{{ $denuncias->descripcion }} </li>
 
                     
                 </div>
                 <div class="mt-4">
-                    <p class="h3">Datos del denunciante</p>
+                    <p style="font-size: 20px;"><strong>Datos del denunciante </strong></p>
                 </div>
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
-                            <th scope="col" class="col-5">Nombre: {{ $denuncias->nombre }}</th>
-                            <th scope="col" class="col-5">C.I.: {{ $denuncias->ci }}</th>
+                            <th scope="col" style="width: 50%;">Nombre: {{ $denuncias->nombre }}</th>
+                            <th scope="col" style="width: 50%;">C.I.: {{ $denuncias->ci }}</th>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
-                            <th scope="col" class="col-5">Domicilio: {{ $denuncias->domicilio }}</th>
-                            <th scope="col" class="col-5">Telefono: {{ $denuncias->telefono }}</th>
+                            <th scope="col" style="width: 50%;">Domicilio: {{ $denuncias->domicilio }}</th>
+                            <th scope="col" style="width: 50%;">Telefono: {{ $denuncias->telefono }}</th>
                         </tr>
                     </tbody>
                 </table>
