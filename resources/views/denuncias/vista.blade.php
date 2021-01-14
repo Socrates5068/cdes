@@ -17,7 +17,7 @@
         
         @page {
             margin-top: 0.5em;
-            /* margin-left: 0.6em; */
+            margin-left: 0.5em;
             margin-bottom: 0.5em;
         }
 
@@ -12041,35 +12041,39 @@
                     <li class="list-group-item text-justify" style="height: 175px">{{ $denuncias->observacion }}</li>
 
                     <strong><label for="Descripción" class="mt-2">Descripción del lugar</label></strong>
-                    <li class="list-group-item text-justify mt-2" style="height: 100px">{{ $denuncias->descripcion }} </li>
+                    <li class="list-group-item text-justify mt-2" style="height: 90px">{{ $denuncias->descripcion }} </li>
 
                     
                 </div>
                 <div class="mt-4">
-                    <p style="font-size: 20px;"><strong>Datos del denunciante </strong></p>
+                    <p style="font-size: 20px;"><strong>Datos del denunciante (codigo: {{$denuncias->id}}) </strong></p>
                 </div>
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
-                            <th scope="col" style="width: 50%;">Nombre: {{ $denuncias->nombre }}</th>
-                            <th scope="col" style="width: 50%;">C.I.: {{ $denuncias->ci }}</th>
+                            <th scope="col" style="width: 75%;">Nombre: {{ $denuncias->nombre }}</th>
+                            <th scope="col" style="width: 25%;">C.I.: {{ $denuncias->ci }}</th>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
-                            <th scope="col" style="width: 50%;">Domicilio: {{ $denuncias->domicilio }}</th>
-                            <th scope="col" style="width: 50%;">Telefono: {{ $denuncias->telefono }}</th>
+                            <th scope="col" style="width: 75%;">Domicilio: {{ $denuncias->domicilio }}</th>
+                            <th scope="col" style="width: 25%;">Teléfono: {{ $denuncias->telefono }}</th>
                         </tr>
                     </tbody>
                 </table>
-                <div class="form-group py-5 text-center">
-                    <h5 class="mt-5">Firma del denunciante</h5>
-                </div>                
+                <table class="table table-bordered">
+                    
+                </table>
+                <div class="py-5 align-bottom">
+                    <p class="mt-4" style="font-size: 20px;" align="center"><strong>Firma del denunciante</strong></p>
+                </div>            
+
                 <div class="mt-5 text-center">
-                    <strong><label for="prueba">IMAGEN DE REFERENCIA</label></strong>
-                        <img src="C:\laragon\www\sedes\storage\app\public/{{ $denuncias->nota }}"
-                        width="500"
-                        class="mt-5" />    
+                    <strong><label class="mt-1" for="prueba">IMAGEN DE REFERENCIA</label></strong>
+                    <img src="C:\laragon\www\sedes\storage\app\public/{{ $denuncias->nota }}"
+                    width="500"
+                    class="mt-5" />    
                 </div>
             </div>
         </div>
