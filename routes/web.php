@@ -70,7 +70,7 @@ Route::group(['prefix' => 'admin',
 });
 
 //Denuncias Routes
-Route::get('/denuncias', 'DenunciaController@index')->name('denuncias.index');
+Route::get('/denuncias/vista', 'DenunciaController@vista')->name('denuncias.vista');
 Route::get('/denuncias/create', 'DenunciaController@create')->name('denuncias.create');
 Route::post('/denuncias', 'DenunciaController@store')->name('denuncias.store');
 Route::get('/denuncias/pdf', 'DenunciaController@pdf')->name('pdf.index');

@@ -14,9 +14,14 @@ class DenunciaController extends Controller
 {
     public function index()
     {
+        
+    }
+
+    public function vista()
+    {
         /* $denuncias = Denuncia::latest('id')->first(); */
 
-        return view('denuncias.index');
+        return view('denuncias.vista');
     }
 
     public function create()
@@ -63,7 +68,7 @@ class DenunciaController extends Controller
         $options->setIsHtml5ParserEnabled(true); */
         $dompdf = App::make("dompdf.wrapper");
         $dompdf->setPaper(array(0,0,612.00,792.00), 'portrait');
-        $dompdf->loadView("/denuncias/index");
+        $dompdf->loadView("/denuncias/vista");
         
         return $dompdf->stream("Formulario de denuncia", array("Attachment" => 0));
     }
