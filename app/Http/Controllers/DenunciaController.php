@@ -14,7 +14,8 @@ class DenunciaController extends Controller
 {
     public function index()
     {
-        
+        $denuncias = Denuncia::latest()->paginate(6);
+        return view('denuncias.index')->with('denuncias', $denuncias);
     }
 
     public function vista()
@@ -71,5 +72,28 @@ class DenunciaController extends Controller
         $dompdf->loadView("/denuncias/vista");
         
         return $dompdf->stream("Formulario de denuncia", array("Attachment" => 0));
+    }
+
+    public function show(Denuncia $denuncia)
+    {
+        return view('denuncias.show', compact('denuncia'));
+    }
+
+    public function buscar()
+    {
+        return view('denuncias.buscar');
+    }
+
+    public function buscar2(Request $request)
+    {
+        $busqueda = $request->get('buscar');
+        $denuncias = Denuncia::where('id', '=', "57")->paginate(1);
+        $denuncias->appends(['buscar' => $busqueda]);
+        //$denuncia = new Denuncia;
+        //$denuncia->id = $busqueda;
+
+        return view('denuncias.show2', compact('denuncias', 'busqueda'));
+        //return $denuncia;
+        //return $denuncia;
     }
 }

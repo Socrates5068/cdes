@@ -256,6 +256,7 @@
             </main>
         </div>
     </div>
+    @yield('listardenunciar')
 
     @include('partials.footer')
 
