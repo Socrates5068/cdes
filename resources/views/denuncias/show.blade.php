@@ -5,8 +5,6 @@
 <div class="container col-9 bg-white p-3 shadow mb-5">
     <p style="font-size: 30px;"class="text-center mb-4"><strong>CÓDIGO DE DENUNCIA {{$denuncia->id}}</strong></p>
     <div class="py-1">
-        <form method="POST" action="{{ route('denuncias.store')}}" enctype="multipart/form-data" novalidate>
-            @csrf
             <div class="form-group">
                 <strong><label for="Observaciones">Observaciones</label></strong>
                 <li class="list-group-item text-justify">{{$denuncia->observacion}}</li>
@@ -17,7 +15,7 @@
             </div>
             <div class="form-group" class="align-content-center">
                 <strong><label for="prueba">IMÁGEN DE REFERENCIA</label></strong>
-                <img src="/storage/{{$denuncia->nota}}"
+                <img src="/storage/{{$denuncia->imagen}}"
                 width="750" class="mx-auto d-block"/>
             </div>
             <div>
@@ -42,8 +40,10 @@
                     </div>
                 </div>
             </div>
-        </form>
     </div>
+    <a href="{{ route ('denuncias.leido', ['denuncia' => $denuncia->id]) }}" 
+        class="btn btn-dark mr-1 w-100 d-block mb-2" 
+        class="btn btn-dark">Marcar como leído</a>
 </div>
 
 @endsection

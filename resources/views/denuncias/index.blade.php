@@ -16,16 +16,18 @@
         <tbody>
 
             @foreach($denuncias as $denuncia)
-            <tr>
-                <td class="text-center">{{$denuncia->id}}</td>
-                <td>{{ substr($denuncia->observacion, 0, 150) }}...</td>
-                <td>
-                    <eliminar-comunicado
-                        comunicado-id={{$denuncia->id}}
-                    ></eliminar-comunicado>                       
-                    <a href="{{ route ('denuncias.show', ['denuncia' => $denuncia->id]) }}" class="btn btn-success mr-1 w-100 d-block">Ver</a>
-                </td>
-            </tr>
+                @if(!$denuncia->leido)
+                    <tr>
+                        <td class="text-center">{{$denuncia->id}}</td>
+                        <td>{{ substr($denuncia->observacion, 0, 150) }}...</td>
+                        <td>
+                            <eliminar-comunicado
+                                comunicado-id={{$denuncia->id}}
+                            ></eliminar-comunicado>                       
+                            <a href="{{ route ('denuncias.show', ['denuncia' => $denuncia->id]) }}" class="btn btn-success mr-1 w-100 d-block">Ver</a>
+                        </td>
+                    </tr>
+                @endif
             @endforeach
         </tbody>
     </table>

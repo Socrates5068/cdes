@@ -110,4 +110,21 @@ class DenunciaController extends Controller
         //return $denuncias->id;
 
     }
+
+    public function leido(Request $request)
+    {
+
+        /* $denuncia = DB::table('denuncias')
+        ->where('id', $request->id)
+        ->first();
+        $denuncia->update(['leido'=>TRUE]);
+                
+        return ['denuncia' => $denuncia]; */
+
+        $denuncia = DB::table('denuncias')->where('id', $request->id);
+        $denuncia->update(['leido'=>true]);
+
+        $denuncias = Denuncia::latest()->paginate(6);
+        return view('denuncias.index')->with('denuncias', $denuncias);
+    }
 }
