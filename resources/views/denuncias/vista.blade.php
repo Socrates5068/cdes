@@ -12036,7 +12036,7 @@
             <div class="mt-4">
                 <p style="font-size: 20px;"><strong>Datos del denunciante (codigo: {{$denuncias->id}}) </strong></p>
             </div>
-            <table class="table table-bordered">
+            <table class="table table-bordered mb-5">
                 <tbody>
                     <tr>
                         <th scope="col" style="width: 75%;">Nombre: {{ $denuncias->nombre }}</th>
@@ -12056,7 +12056,7 @@
 
             <div class="py-4 text-center">
                 <strong><label class="mt-3" for="prueba">IMAGEN DE REFERENCIA</label></strong>
-                <img src="C:\laragon\www\sedes\storage\app\public/{{ $denuncias->nota }}"
+                <img src="C:\laragon\www\sedes\storage\app\public/{{ $denuncias->imagen }}"
                 width="500"
                 class="mt-5" />    
             </div>

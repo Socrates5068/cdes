@@ -33,11 +33,15 @@ class DenunciaController extends Controller
     public function store(Request $request)
     {
         $data = $request;
-        /* $data = request()->validate([
-            'observacion' => 'required',
-            'descripcion' => 'required',
-            //'imagen' => 'required|image'
-        ]); */
+        $data = request()->validate([
+            'observacion' => 'required|min:50|max:650',
+            'descripcion' => 'required|min:20|max:200',
+            'imagen' => 'required|image',
+            'nombre' => 'required|min:10|max:50',
+            'ci' => 'required|min:6|max:10',
+            'domicilio' => 'required|min:10|max:50',
+            'telefono' => 'required|min:5|max:10',
+        ]);
 
         $ruta_imagen = $request['imagen']->store('denuncia', 'public');
 
@@ -51,10 +55,10 @@ class DenunciaController extends Controller
         DB::table('denuncias')->insert([
             'observacion' => $data['observacion'],
             'descripcion' => $data['descripcion'],
-            'nota' => $ruta_imagen,
+            'imagen' => $ruta_imagen,
             'nombre' => $data['nombre'],
             'ci' => $data['ci'],
-            'domicilio' => $data['direccion'],
+            'domicilio' => $data['domicilio'],
             'telefono' => $data['telefono'],
         ]);
 

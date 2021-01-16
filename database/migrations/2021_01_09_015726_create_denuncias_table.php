@@ -17,11 +17,12 @@ class CreateDenunciasTable extends Migration
             $table->bigIncrements('id');
             $table->text('observacion');
             $table->text('descripcion', 500);
-            $table->string('nota', 128)->nullable();
-            $table->string('nombre', 30);
+            $table->string('imagen', 128)->nullable();
+            $table->string('nombre', 45);
             $table->string('ci', 10);
-            $table->string('domicilio', 30);
+            $table->string('domicilio', 45);
             $table->string('telefono', 10);
+            $table->boolean('leido')->default(false);
             $table->timestamps();
         });
     }
