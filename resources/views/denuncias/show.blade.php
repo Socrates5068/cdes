@@ -2,38 +2,8 @@
 
 @section('listardenunciar')
 
-<div class="container col-9 bg-white p-3 shadow">
-    <h1 class="text-center mb-4">Código de denuncia {{$denuncia->id}}</h1>
-
-    {{-- <div class="">
-    <img src="/storage/{{$comunicado->imagen}}" class="w-100" style="img.responsive: max-width: 100%; height: auto;">
-    </div>
-
-    <div class="receta-meta mt-3">
-        <p>
-            <span class="font-weigth-bold text-primary">Autor:</span>
-            <a class="text-dark" href="{{ route('perfiles.show', ['perfil' => $comunicado->autor->id])}}">
-            {{$comunicado->autor->name}}
-            </a>
-        </p>
-    </div>
-
-    <div class="receta-meta">
-        <p>
-            <span class="font-weigth-bold text-primary">Fecha:</span>
-            @php
-                $fecha = $comunicado->created_at
-            @endphp
-
-            <fecha-comunicado fecha="{{$fecha}}"></fecha-comunicado>
-        </p>
-    </div>
-
-    <div class="container col-12">
-        <h2 class="my-3 text-primary"> Comunicado</h2>
-        {!! $comunicado->mensaje !!}
-    </div> --}}
-
+<div class="container col-9 bg-white p-3 shadow mb-5">
+    <p style="font-size: 30px;"class="text-center mb-4"><strong>CÓDIGO DE DENUNCIA {{$denuncia->id}}</strong></p>
     <div class="py-1">
         <form method="POST" action="{{ route('denuncias.store')}}" enctype="multipart/form-data" novalidate>
             @csrf
@@ -46,7 +16,7 @@
                 <li class="list-group-item text-justify">{{$denuncia->descripcion}}</li>
             </div>
             <div class="form-group" class="align-content-center">
-                <strong><label for="prueba">IMAGEN DE REFERENCIA</label></strong>
+                <strong><label for="prueba">IMÁGEN DE REFERENCIA</label></strong>
                 <img src="/storage/{{$denuncia->nota}}"
                 width="750" class="mx-auto d-block"/>
             </div>

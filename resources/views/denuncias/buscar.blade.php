@@ -12006,35 +12006,28 @@
 <div class="col-2 mx-auto d-block">
     <input type="text" class="form-control" placeholder="Ingresar codigo">
 </div> --}}
-<div class="container h-1000">
-    <div class="row justify-content-center h-100">
-        <div class="col-sm-8 align-self-center text-center">
-            <div class="card shadow">
-                <div class="card-body">           
-                    {{-- <form action="" method="POST" ></form>
-                        <h1 class="text-center font-weight-bold">Buscar denuncia</h1>
-                        <h2 class="text-center mb-4">Ingresar codigo de denuncia</h1>
-                        <input type="text" class="form-control col-3 mx-auto d-block" 
-                        placeholder="Ingresar codigo">
-
-                    </form> --}}
-                    <form action="{{ route('denuncias.buscar2') }}">
-                        <div class="row">
-                            <div class="col-md8 texto-buscar mx-auto d-block">
-                                <h1 class="text-center font-weight-bold">Buscar denuncia</h1>
-                                <h2 class="text-center mb-4">Ingresar codigo de denuncia</h2>
-                                <input
-                                    type="search"
-                                    name="buscar"
-                                    class="form-control mx-auto d-block col-5"
-                                    placeholder="Ingresar código"
-                                />
+    <div class="container h-1000 mb-5">
+        <div class="row justify-content-center h-100">
+            <div class="col-sm-8 align-self-center text-center">
+                <div class="card shadow">
+                    <div class="card-body">           
+                        <form action="{{ route('denuncias.buscar2') }}">
+                            <div class="row">
+                                <div class="col-md8 texto-buscar mx-auto d-block">
+                                    <h1 class="text-center font-weight-bold">Buscar denuncia</h1>
+                                    <h2 class="text-center mb-4">Ingresar codigo de denuncia</h2>
+                                    <input
+                                        type="search"
+                                        name="buscar"
+                                        class="form-control mx-auto d-block col-5"
+                                        placeholder="Ingresar código"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>

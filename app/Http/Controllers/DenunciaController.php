@@ -32,13 +32,12 @@ class DenunciaController extends Controller
 
     public function store(Request $request)
     {
+        $data = $request;
         /* $data = request()->validate([
             'observacion' => 'required',
             'descripcion' => 'required',
             //'imagen' => 'required|image'
         ]); */
-
-        $data = $request;
 
         $ruta_imagen = $request['imagen']->store('denuncia', 'public');
 
@@ -86,14 +85,25 @@ class DenunciaController extends Controller
 
     public function buscar2(Request $request)
     {
-        $busqueda = $request->get('buscar');
+        /* $busqueda = $request->get('buscar');
         $denuncias = Denuncia::where('id', '=', "57")->paginate(1);
-        $denuncias->appends(['buscar' => $busqueda]);
-        //$denuncia = new Denuncia;
-        //$denuncia->id = $busqueda;
+        $denuncias->appends(['buscar' => $busqueda]); */
+        
+        $denuncia = new Denuncia;
+        $den = Denuncia::find($request->buscar);
 
-        return view('denuncias.show2', compact('denuncias', 'busqueda'));
-        //return $denuncia;
-        //return $denuncia;
+        $denuncia->id = $den->id;
+        $denuncia->observacion= $den->observacion;
+        $denuncia->descripcion = $den->descripcion;
+        $denuncia->nota = $den->nota;
+        $denuncia->nombre = $den->nombre;
+        $denuncia->ci = $den->ci;
+        $denuncia->domicilio = $den->domicilio;
+        $denuncia->telefono = $den->telefono;
+
+        //return view('denuncias.show2', compact('denuncias', 'busqueda'));
+        return view('denuncias.show', compact('denuncia'));
+        //return $denuncias->id;
+
     }
 }

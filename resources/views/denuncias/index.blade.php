@@ -3,12 +3,12 @@
 @section('listardenunciar')
 <h2 class="text-center mb-5">Administrar denuncias</h2>
 
-<div class="col-md-10 mx-auto p-3 shadow">
+<div class="col-md-10 mx-auto p-3 shadow mb-5">
     <table class="table">
         <thead class="bg-secondary text-light">
             <tr>
                 <th scole="col">Código</th>
-                <th scole="col">Observaciones</th>
+                <th scole="col">Denuncia</th>
                 <th scole="col">Acciones</th>
             </tr>
         </thead>
