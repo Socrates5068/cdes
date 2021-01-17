@@ -9,6 +9,7 @@
                         <li><i class="lni-phone-handset"></i>(+591)26225559</li>
                         <li><i class="lni-envelope"></i> sedespotosi2018@gmail.com</li>
                         <li><a href="https://www.google.com/maps/place/Sedes+Potos%C3%AD/@-19.5820683,-65.7539823,19z/data=!3m1!4b1!4m5!3m4!1s0x93f94e73c203f045:0x117cca1a166b910!8m2!3d-19.5820696!4d-65.7534351" target="_blank"><i class="lni-map-marker"></i>Calle Chayanta N° 779</a></li>
+                        <a href="{{ route ('denuncias.create') }}"><li><i class="lni-angle-double-right"></i>Denuncias</li></a>
                     </ul>
 
                 </div>
@@ -93,8 +94,12 @@
                             <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1Z2iUvDNY7fsr3EfMxkHOd1V7jecmpsRP/view?usp=sharing">Datos Oficiales Potosi</a>
                             <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1UVS8XesMb8qww-pGuZqhCGsfanOkyujz/view?usp=sharing">Datos Oficiales Bolivia</a>
                             
-                            <a class="dropdown-item" href="{{ route('pages.galeria') }}">Boletin Informativo</a>                       
-                       
+                            <a class="dropdown-item" href="{{ route('pages.galeria') }}">Boletin Informativo</a>                   
+                            <a class="dropdown-item" href="{{ route('denuncias.index') }}">Realizar denuncia</a>
+                            @if (Auth::check())                
+                                <a class="dropdown-item" href="{{ route('denuncias.index') }}">Administrar denuncias</a>                 
+                            @endif
+                            
                         </div>
                     </li>
                     

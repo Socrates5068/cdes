@@ -3,7 +3,7 @@
 @section('listardenunciar')
 
 <div class="container col-9 bg-white p-3 shadow mb-5">
-    <p style="font-size: 30px;"class="text-center mb-4"><strong>CÓDIGO DE DENUNCIA {{$denuncia->id}}</strong></p>
+    <p style="font-size: 30px;" class="text-center mb-4"><strong>CÓDIGO DE DENUNCIA {{$denuncia->id}}</strong></p>
     <div class="py-1">
             <div class="form-group">
                 <strong><label for="Observaciones">Observaciones</label></strong>

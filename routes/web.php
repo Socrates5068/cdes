@@ -75,8 +75,8 @@ Route::get('/denuncias/vista', 'DenunciaController@vista')->name('denuncias.vist
 Route::get('/denuncias/create', 'DenunciaController@create')->name('denuncias.create');
 Route::post('/denuncias', 'DenunciaController@store')->name('denuncias.store');
 Route::get('/denuncias/pdf', 'DenunciaController@pdf')->name('pdf.index');
-Route::get('/denuncias/buscar', 'DenunciaController@buscar')->name('denuncias.buscar'); //Buscar una sola denuncia basado en denuncia->id
-Route::get('/denuncias/buscar2', 'DenunciaController@buscar2')->name('denuncias.buscar2'); //Busqueda mediante coindencias del texto ingresado
+Route::get('/denuncias/buscar', 'DenunciaController@buscar')->name('denuncias.buscar'); //Busqueda mediante coindencias del texto ingresado
+Route::get('/denuncias/buscar2', 'DenunciaController@buscar2')->name('denuncias.buscar2'); //Buscar una sola denuncia basado en el id
 Route::get('/denuncias/{denuncia}', 'DenunciaController@show')->name('denuncias.show');
 Route::get('/buscardenuncia', 'DenunciaController@show2')->name('denuncias.show2');
 Route::get('/denuncias/{id}/editar', 'DenunciaController@leido')->name('denuncias.leido');

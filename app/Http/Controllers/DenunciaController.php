@@ -14,7 +14,7 @@ class DenunciaController extends Controller
 {
     public function index()
     {
-        $denuncias = Denuncia::latest()->paginate(6);
+        $denuncias = Denuncia::latest()->paginate(10);
         return view('denuncias.index')->with('denuncias', $denuncias);
     }
 
@@ -96,18 +96,22 @@ class DenunciaController extends Controller
         $denuncia = new Denuncia;
         $den = Denuncia::find($request->buscar);
 
-        $denuncia->id = $den->id;
-        $denuncia->observacion= $den->observacion;
-        $denuncia->descripcion = $den->descripcion;
-        $denuncia->nota = $den->nota;
-        $denuncia->nombre = $den->nombre;
-        $denuncia->ci = $den->ci;
-        $denuncia->domicilio = $den->domicilio;
-        $denuncia->telefono = $den->telefono;
+        if ($den == null){
+            return "Este código no existe <a href='https://sedespotosi.com/'>Volver</a>";
+        } else {
+            $denuncia->id = $den->id;
+            $denuncia->observacion= $den->observacion;
+            $denuncia->descripcion = $den->descripcion;
+            $denuncia->nota = $den->nota;
+            $denuncia->nombre = $den->nombre;
+            $denuncia->ci = $den->ci;
+            $denuncia->domicilio = $den->domicilio;
+            $denuncia->telefono = $den->telefono;
 
-        //return view('denuncias.show2', compact('denuncias', 'busqueda'));
-        return view('denuncias.show', compact('denuncia'));
-        //return $denuncias->id;
+            //return view('denuncias.show2', compact('denuncias', 'busqueda'));
+            return view('denuncias.show', compact('denuncia'));
+            //return $denuncias->id;
+        }
 
     }
 
@@ -124,7 +128,7 @@ class DenunciaController extends Controller
         $denuncia = DB::table('denuncias')->where('id', $request->id);
         $denuncia->update(['leido'=>true]);
 
-        $denuncias = Denuncia::latest()->paginate(6);
+        $denuncias = Denuncia::latest()->paginate(10);
         return view('denuncias.index')->with('denuncias', $denuncias);
     }
 }
