@@ -102,7 +102,7 @@ class DenunciaController extends Controller
             $denuncia->id = $den->id;
             $denuncia->observacion= $den->observacion;
             $denuncia->descripcion = $den->descripcion;
-            $denuncia->nota = $den->nota;
+            $denuncia->imagen = $den->imagen;
             $denuncia->nombre = $den->nombre;
             $denuncia->ci = $den->ci;
             $denuncia->domicilio = $den->domicilio;

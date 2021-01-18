@@ -117,4 +117,20 @@
         </ul>
     </li>
 
+    <li class="treeview {{ request()->is('denuncias*') ? 'active' : '' }}">
+        <a href="#"><i class="fa fa-newspaper-o"></i> <span>Denuncias</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+        </a>
+        <ul class="treeview-menu">
+            <li {{ request()->is('denuncias/buscar') ? 'class=active' : '' }}>
+                <a href="{{ route('denuncias.buscar') }}"><i class="fa fa-eye"></i>Buscar denuncia</a>
+            </li>
+            <li {{ request()->is('/denuncias') ? 'class=active' : '' }}>
+                <a href="{{ route('denuncias.index') }}"><i class="fa fa-pencil"></i>Administrar denuncias</a>
+            </li>
+        </ul>
+    </li>
+
 </ul>
