@@ -3,6 +3,65 @@
     Inicio | Servicio Departamental de Salud Potosí
 @endsection
 @section('banner')
+{{-- Ventana emegente --}}
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="popup" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Titulo</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               {{-- <img src="https://www.hogar.mapfre.es/media/2018/09/hamburguesa-sencilla.jpg" alt=""> --}}
+               <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+            
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="https://www.hogar.mapfre.es/media/2018/09/hamburguesa-sencilla.jpg"
+                        alt="" style="width: 800px">
+                    </div>
+                    <div class="item">
+                        <img src="https://blog.lewolang.com/images/340a2a5ba54afa16f3c75200a75bf96b.jpg"
+                        alt="" style="width: 800px">
+                    </div>
+                    <div class="item">
+                        <img src="https://www.recreoviral.com/wp-content/uploads/2015/05/20-comidas-para-preparar-aunque-estes-en-quiebra-3.jpg"
+                        alt="" style="width: 800px">
+                    </div>
+                </div>
+            
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            </div>
+          {{-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div> --}}
+        </div>
+      </div>
+    </div>
+  </div>      
+  <script>
+    $("#popup").modal();      
+  </script>
+
     <div id="main-slide" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#main-slide" data-slide-to="0"></li>
@@ -432,6 +491,15 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+<!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 @endsection
 
 

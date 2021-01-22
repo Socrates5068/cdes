@@ -81,6 +81,8 @@ Route::get('/denuncias/{denuncia}', 'DenunciaController@show')->name('denuncias.
 Route::get('/buscardenuncia', 'DenunciaController@show2')->name('denuncias.show2');
 Route::get('/denuncias/{id}/editar', 'DenunciaController@leido')->name('denuncias.leido');
 
+Route::view('/pruebas', 'pruebas');
+
 
 
 

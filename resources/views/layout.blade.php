@@ -50,6 +50,9 @@
     <!-- Icon Style -->
     <link href="{{ asset('assets/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+    @yield('scripts')
+
     <style>
         .cajaf{
             position: fixed;
@@ -233,6 +236,7 @@
 </head>
 
 <body>
+    
     <div class="cajaf">
         <a href="#" class="btn_roundf" title="COVID 19" alt="corona virus">COVID-19</a>
         <a class="caja1" target="_blank" href="{{route('covid.pais')}}" alt="covid pais" title="covid pais">Por Pais</a>
