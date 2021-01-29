@@ -23,6 +23,7 @@ class CreateDenunciasTable extends Migration
             $table->string('domicilio', 45);
             $table->string('telefono', 10);
             $table->boolean('leido')->default(false);
+            $table->uuid('uuid');
             $table->timestamps();
         });
     }

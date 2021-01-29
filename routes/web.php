@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +12,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//use Illuminate\Routing\Route;
+
 Route::get('/', 'RoutesController@home')->name('pages.index');
 Route::get('sedes/antecedentes', 'RoutesController@antecedentes')->name('pages.antecedentes');
 Route::get('sedes/autoridades', 'RoutesController@autoridades')->name('pages.autoridades');
@@ -82,6 +87,7 @@ Route::get('/buscardenuncia', 'DenunciaController@show2')->name('denuncias.show2
 Route::get('/denuncias/{id}/editar', 'DenunciaController@leido')->name('denuncias.leido');
 
 Route::view('/pruebas', 'pruebas');
+Route::post('/denimg/store', 'DenimgController@store')->name('denimg.store');
 
 
 

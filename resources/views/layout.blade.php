@@ -8,6 +8,7 @@
         @yield('meta-title', '| SEDES')
     </title>
     @yield('metas')
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="description" content="@yield('meta-description')">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
@@ -51,8 +52,9 @@
     <link href="{{ asset('assets/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 
-    @yield('scripts')
 
+    @yield('styles')
+    @yield('scripts')
     <style>
         .cajaf{
             position: fixed;
@@ -368,7 +370,7 @@
     </script>
 
     
-
+    
 </body>
 
 </html>
