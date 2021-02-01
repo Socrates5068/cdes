@@ -14,9 +14,14 @@
                 <li class="list-group-item text-justify">{{$denuncia->descripcion}}</li>
             </div>
             <div class="form-group" class="align-content-center">
-                <strong><label for="prueba">IMÁGEN DE REFERENCIA</label></strong>
-                <img src="/storage/{{$denuncia->imagen}}"
-                width="750" class="mx-auto d-block"/>
+                <strong><label for="prueba">IMÁGENES DE REFERENCIA</label></strong>
+                @php
+                    $imgs = $denuncia->imagenes;
+                @endphp
+                @foreach($imgs as $img)
+                    <img src="/storage/{{$img->ruta_imagen}}"
+                    width="750" class="mx-auto d-block"/>
+                @endforeach    
             </div>
             <div>
                 <p class="h3">Datos del denunciante</p>
