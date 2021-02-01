@@ -36,11 +36,12 @@ class DenunciaController extends Controller
         $data = request()->validate([
             'observacion' => 'required|min:50|max:650',
             'descripcion' => 'required|min:20|max:200',
-            'imagen' => 'required|image',
+            'imagen' => 'required|image|max:3000',
             'nombre' => 'required|min:10|max:50',
             'ci' => 'required|min:6|max:10',
             'domicilio' => 'required|min:10|max:50',
-            'telefono' => 'required|min:5|max:10',
+            'telefono' => 'required|min:5|max:10|numeric',
+            'uuid' => 'required|uuid'
         ]);
 
         $ruta_imagen = $request['imagen']->store('denuncia', 'public');
@@ -60,6 +61,7 @@ class DenunciaController extends Controller
             'ci' => $data['ci'],
             'domicilio' => $data['domicilio'],
             'telefono' => $data['telefono'],
+            'uuid' => $data['uuid'],
         ]);
 
         return redirect()->action('DenunciaController@pdf');

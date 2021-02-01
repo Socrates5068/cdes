@@ -88,6 +88,7 @@ Route::get('/denuncias/{id}/editar', 'DenunciaController@leido')->name('denuncia
 
 Route::view('/pruebas', 'pruebas');
 Route::post('/denimg/store', 'DenimgController@store')->name('denimg.store');
+Route::post('/denimg/destroy', 'DenimgController@destroy')->name('denimg.destroy');
 
 
 

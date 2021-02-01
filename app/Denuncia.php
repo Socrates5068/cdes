@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Denuncia extends Model
 {
     protected $table = "denuncias";
-    protected $fillable = ['observacion', 'descripcion', 'nota', 'nombre', 'ci', 'dominicilio', 'telefono'];
+    protected $fillable = [
+        'observacion', 
+        'descripcion', 
+        'nota', 
+        'nombre', 
+        'ci', 
+        'dominicilio', 
+        'telefono', 
+        'uuid'
+    ];
 }

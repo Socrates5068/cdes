@@ -23,18 +23,35 @@
                     'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content
                 },
                 success: function(file, respuesta) {
-                    // console.log(file);
+                    //console.log(file);
                     console.log(respuesta);
-                    //file.nombreServidor = respuesta.archivo;
+                    file.nombreServidor = respuesta.archivo;
                 },
                 sending: function(file, xhr, formData) {
                     formData.append('uuid', document.querySelector('#uuid').value )
                     // console.log('enviando');
                 },
+                removedfile: function(file, respuesta) {
+                    console.log(file);
+
+                    const params = {
+                        imagen: file.nombreServidor,
+                        uuid: document.querySelector('#uuid').value
+                    }
+
+                    axios.post('/denimg/destroy', params )
+                        .then( respuesta => {
+                            console.log(respuesta)
+
+                            // Eliminar del DOM
+                            file.previewElement.parentNode.removeChild(file.previewElement);
+                        })
+                }
             });
         }
     })
     </script>
+
     <?php use Illuminate\Support\Str;
     ?>
     <div class="container">
@@ -149,5 +166,6 @@
 @endsection
 
 @section('scripts')
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js" integrity="sha512-8l10HpXwk93V4i9Sm38Y1F3H4KJlarwdLndY9S5v+hSAODWMx3QcAVECA23NTMKPtDOi53VFfhIuSsBjjfNGnA==" crossorigin="anonymous" defer></script>
 @endsection
