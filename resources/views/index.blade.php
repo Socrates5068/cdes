@@ -106,11 +106,11 @@
             </div>
         </div>
         <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
-            <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
+            <span class="carousel-control-next" aria-hidden="true"><i class="lni-chevron-left"></i></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#main-slide" role="button" data-slide="next">
-            <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
+            <span class="carousel-control-prev" aria-hidden="true"><i class="lni-chevron-right"></i></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
@@ -494,8 +494,8 @@
 @endsection
 
 @section('scripts')
-<!-- Compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
     <!-- Minified JS library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Compiled and minified Bootstrap JavaScript -->

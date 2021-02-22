@@ -99,18 +99,59 @@
                         </div>
                     </li>
                     
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            CONVOCATORIAS<i class=""></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            
+                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1b__MRSu9Feve8LZf6QKWx-dX3ppOFy4v/view?usp=sharing">01/2021</a>
+                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1g3oI1YJd4QvmslZ4V3mjT-WK4JnR2iYN/view?usp=sharing">02/2021</a>
+                            
+                          
+                            
+                        </div>
+                    </li>
                     
-                    
-                    
-                    
-              
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            Transparencia<i class=""></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            
+                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1b__MRSu9Feve8LZf6QKWx-dX3ppOFy4v/view?usp=sharing">Informes y rendición de cuentas</a>
+                            
+                          
+                            
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            SSSRO<i class=""></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            
+                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1b__MRSu9Feve8LZf6QKWx-dX3ppOFy4v/view?usp=sharing">
+                                {{-- <iframe width="400" height="400" src="https://www.eoidigital.com/testonline/prueba.pdf" frameborder="0"></iframe></a> --}}
+                                <iframe src="https://docs.google.com/viewer?url=https://www.eoidigital.com/testonline/prueba.pdf&embedded=true"  frameborder="0"></iframe></a>
+                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1g3oI1YJd4QvmslZ4V3mjT-WK4JnR2iYN/view?usp=sharing">requisitos entrega de infome</a>
+                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1g3oI1YJd4QvmslZ4V3mjT-WK4JnR2iYN/view?usp=sharing">requisitos obtención de resolución</a>
+                            
+                          
+                            
+                        </div>
+                    </li>
                     
                     
                     
                     
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('pages.contacto') }}">
-                            Contacto
+                            Contactos
                         </a>
                     </li>
                 </ul>
