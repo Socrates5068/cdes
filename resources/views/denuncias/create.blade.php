@@ -1,6 +1,59 @@
 @extends('layout')
 
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" integrity="sha512-3g+prZHHfmnvE1HBLwUnVuunaPOob7dpksI7/v6UnF/rnKGwHf/GdEq9K7iEN7qTtW+S0iivTcGpeTBqqB04wA==" crossorigin="anonymous" />
+@endsection
+
 @section('denuncias')
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        
+        if (document.querySelector('#dropzone')) {
+            Dropzone.autoDiscover = false;
+    
+            const dropzone = new Dropzone('div#dropzone', {
+                url: '/denimg/store',
+                dictDefaultMessage: 'Sube hasta 10 Imágenes',
+                maxFiles: 10,
+                required: true,
+                acceptedFiles: ".png, .jpg, .gif, .jpeg",
+                addRemoveLinks: true,
+                dictRemoveFile: "Eliminar Imagen",
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content
+                },
+                success: function(file, respuesta) {
+                    //console.log(file);
+                    console.log(respuesta);
+                    file.nombreServidor = respuesta.archivo;
+                },
+                sending: function(file, xhr, formData) {
+                    formData.append('uuid', document.querySelector('#uuid').value )
+                    // console.log('enviando');
+                },
+                removedfile: function(file, respuesta) {
+                    console.log(file);
+
+                    const params = {
+                        imagen: file.nombreServidor,
+                        uuid: document.querySelector('#uuid').value
+                    }
+
+                    axios.post('/denimg/destroy', params )
+                        .then( respuesta => {
+                            console.log(respuesta)
+
+                            // Eliminar del DOM
+                            file.previewElement.parentNode.removeChild(file.previewElement);
+                        })
+                }
+            });
+        }
+    })
+    </script>
+
+    <?php use Illuminate\Support\Str;
+    ?>
     <div class="container">
         <div class="py-5 text-center">
             <p class="h2">FORMULARIO DE QUEJAS Y DENUNCIAS SOBRE AGIO Y ESPECULACIÓN DE PRECIOS
@@ -40,18 +93,9 @@
                 </div>
                 <div class="form-group">
                     <strong><label for="prueba">IMAGEN DE REFERENCIA</label></strong>
-                    <input 
-                        id="imagen"
-                        type="file"
-                        class="form-control @error('imagen') isinvalid @enderror"
-                        name="imagen"
-                    />
-                    @error('imagen')
-                        <span class="invalid-feedback d-block" role="alert">
-                            <strong>{{$message}}</strong>
-                        </span>
-                    @enderror
+                    <div id="dropzone" class="dropzone form-control"></div>
                 </div>
+                <input type="hidden" id="uuid" name="uuid" value="{{ Str::uuid()->toString() }}">
                 <div>
                     <p class="h3">Datos del denunciante</p>
                 </div>
@@ -119,4 +163,9 @@
         </div>
         
     </div>
+@endsection
+
+@section('scripts')
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js" integrity="sha512-8l10HpXwk93V4i9Sm38Y1F3H4KJlarwdLndY9S5v+hSAODWMx3QcAVECA23NTMKPtDOi53VFfhIuSsBjjfNGnA==" crossorigin="anonymous" defer></script>
 @endsection
