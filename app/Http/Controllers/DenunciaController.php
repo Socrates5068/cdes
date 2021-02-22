@@ -21,9 +21,12 @@ class DenunciaController extends Controller
 
     public function vista()
     {
-        /* $denuncias = Denuncia::latest('id')->first(); */
+        /* $denuncia = Denuncia::latest('id')->first();
+        $imagenes = Denimg::where('id_denuncia', $denuncia->uuid)->get();
+        $denuncia->imagenes = $imagenes; */
 
         return view('denuncias.vista');
+        //return view('denuncias.show', compact('denuncia'));
     }
 
     public function create()

@@ -12000,8 +12000,13 @@
 <body class="bg-white">
     <?php
     use App\Denuncia;
+    use App\Denimg;
 
     $denuncias = Denuncia::latest('id')->first();
+
+    $imagenes = Denimg::where('id_denuncia', $denuncias->uuid)->get();
+    $denuncias->imagenes = $imagenes;
+    
     ?>
     <div class="container col-10">
         <div class="row">
@@ -12056,9 +12061,19 @@
 
             <div class="py-4 text-center">
                 <strong><label class="mt-3" for="prueba">IMAGEN DE REFERENCIA</label></strong>
-                <img src="C:\laragon\www\sedes\storage\app\public/{{ $denuncias->imagen }}"
-                width="500"
-                class="mt-5" />    
+                @php
+                    $imgs = $denuncias->imagenes;
+                @endphp
+                @foreach($imgs as $img)
+                <table class="table table-bordered mt-2">
+                    <tbody>
+                        <tr>
+                            <th scope="col" style="height: 850px;"><img src="C:\laragon\www\sedes\storage\app\public/{{ $img->ruta_imagen }}"
+                                width="500" class="mt-5"/></th>
+                        </tr>
+                    </tbody>
+                </table>
+                @endforeach  
             </div>
         </div>
     </div>

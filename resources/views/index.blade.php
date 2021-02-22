@@ -11,33 +11,33 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Titulo</h4>
+                {{-- <h4 class="modal-title">Invitación</h4> --}}
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                {{-- <img src="https://www.hogar.mapfre.es/media/2018/09/hamburguesa-sencilla.jpg" alt=""> --}}
                <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
-                <ol class="carousel-indicators">
+                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+                    {{--<li data-target="#myCarousel" data-slide-to="2"></li>--}}
+                </ol> 
             
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="https://www.hogar.mapfre.es/media/2018/09/hamburguesa-sencilla.jpg"
+                        <img src="https://sedespotosi.com/modal/invitacionazul.jpg"
                         alt="" style="width: 800px">
                     </div>
                     <div class="item">
-                        <img src="https://blog.lewolang.com/images/340a2a5ba54afa16f3c75200a75bf96b.jpg"
+                        <img src="https://sedespotosi.com/modal/emergencia.jpg"
                         alt="" style="width: 800px">
                     </div>
-                    <div class="item">
+                    {{-- <div class="item">
                         <img src="https://www.recreoviral.com/wp-content/uploads/2015/05/20-comidas-para-preparar-aunque-estes-en-quiebra-3.jpg"
                         alt="" style="width: 800px">
-                    </div>
+                    </div> --}}
                 </div>
             
                 <!-- Controls -->
@@ -106,11 +106,11 @@
             </div>
         </div>
         <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
-            <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
+            <span class="carousel-control-prev" aria-hidden="true"><i class="lni-chevron-left"></i></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#main-slide" role="button" data-slide="next">
-            <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
+            <span class="carousel-control-next" aria-hidden="true"><i class="lni-chevron-right"></i></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
@@ -496,12 +496,10 @@
 @section('scripts')
 <!-- Compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
     <!-- Minified JS library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Compiled and minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 @endsection
-
-
-
 

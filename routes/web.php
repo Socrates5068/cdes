@@ -90,6 +90,14 @@ Route::view('/pruebas', 'pruebas');
 Route::post('/denimg/store', 'DenimgController@store')->name('denimg.store');
 Route::post('/denimg/destroy', 'DenimgController@destroy')->name('denimg.destroy');
 
+Route::get('/datos', function () {
+    return view('datos.datos');
+});
+
+Route::get('/pdf', function () {
+    return view('datos.pdf');
+});
+
 
 
 
