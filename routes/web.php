@@ -90,9 +90,12 @@ Route::view('/pruebas', 'pruebas');
 Route::post('/denimg/store', 'DenimgController@store')->name('denimg.store');
 Route::post('/denimg/destroy', 'DenimgController@destroy')->name('denimg.destroy');
 
-Route::get('/datos', function () {
-    return view('datos.datos');
-});
+Route::get('/datos', function () { return view('datos.datos'); });
+
+Route::get('/requisitosrsssro', function () { return view('datos.rSSSRO'); });
+Route::get('/requisitosinforme', function () { return view('datos.informe'); });
+Route::get('/requisitosresolucion', function () { return view('datos.resolucion'); });
+Route::get('/audienciafinal', function () { return view('datos.audiencia'); });
 
 Route::get('/pdf', function () {
     return view('datos.pdf');

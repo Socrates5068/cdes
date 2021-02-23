@@ -105,13 +105,16 @@
                             CONVOCATORIAS<i class=""></i>
                         </a>
                         <div class="dropdown-menu">
-                            
+                            <label class="dropdown-item disabled" for="">
+                                <strong>Convocatorias Pasadas</strong>
+                            </label>
                             <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1b__MRSu9Feve8LZf6QKWx-dX3ppOFy4v/view?usp=sharing">01/2021</a>
                             <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1g3oI1YJd4QvmslZ4V3mjT-WK4JnR2iYN/view?usp=sharing">02/2021</a>
-                            
-                          
-                            
+                            <label class="dropdown-item disabled" for="">
+                                <strong>Convocatorias Vigentes</strong>
+                            </label>
                         </div>
+
                     </li>
                     
                     <li class="nav-item dropdown">
@@ -120,11 +123,7 @@
                             Transparencia<i class=""></i>
                         </a>
                         <div class="dropdown-menu">
-                            
-                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1b__MRSu9Feve8LZf6QKWx-dX3ppOFy4v/view?usp=sharing">Informes y rendición de cuentas</a>
-                            
-                          
-                            
+                            <a class="dropdown-item" target="" href="/audienciafinal">Rendición Pública de Cuentas Final 2020</a>
                         </div>
                     </li>
 
@@ -135,13 +134,16 @@
                         </a>
                         <div class="dropdown-menu">
                             
-                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1b__MRSu9Feve8LZf6QKWx-dX3ppOFy4v/view?usp=sharing">
+                            <a class="dropdown-item" target="" href="/requisitosrsssro">
                                 {{-- <iframe width="400" height="400" src="https://www.eoidigital.com/testonline/prueba.pdf" frameborder="0"></iframe></a> --}}
-                                <iframe src="https://docs.google.com/viewer?url=https://www.eoidigital.com/testonline/prueba.pdf&embedded=true"  frameborder="0"></iframe></a>
-                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1g3oI1YJd4QvmslZ4V3mjT-WK4JnR2iYN/view?usp=sharing">requisitos entrega de infome</a>
-                            <a class="dropdown-item" target="_blank" href="https://drive.google.com/file/d/1g3oI1YJd4QvmslZ4V3mjT-WK4JnR2iYN/view?usp=sharing">requisitos obtención de resolución</a>
+                                requisitos SSSRO</a>
+                            <a class="dropdown-item" target="" href="/requisitosinforme">Requisitos Entrega de Infome</a>
+                            <a class="dropdown-item" target="" href="/requisitosresolucion">Requisitos Obtención de Resolución</a>
+                            {{-- <a class="dropdown-item" href="https://sedespotosi.com/PDF/requisitos_sssro.pdf" target="_blank" onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;">Requisitos SSSRO</a> 
+                            <a class="dropdown-item" href="https://sedespotosi.com/PDF/requisitos_entrega_informes.pdf" target="_blank" onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;">Requisitos Entrega de Infome</a> 
+                            <a class="dropdown-item" href="https://sedespotosi.com/PDF/requisitos_obtencion_resolucion.pdf" target="_blank" onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;">Requisitos Obtención de Resolución</a> --}}
                             
-                          
+                        
                             
                         </div>
                     </li>
